@@ -10,11 +10,23 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent),
+      },
+      {
+        path: 'movies',
         loadComponent: () => import('./features/movie-list/movie-list.component').then(m => m.MovieListComponent),
       },
       {
         path: 'movie/:id',
         loadComponent: () => import('./features/movie-details/movie-details.component').then(m => m.MovieDetailsComponent),
+      },
+      {
+        path: 'tv',
+        loadComponent: () => import('./features/tv-list/tv-list.component').then(m => m.TvListComponent),
+      },
+      {
+        path: 'tv/:id',
+        loadComponent: () => import('./features/tv-details/tv-details.component').then(m => m.TvDetailsComponent),
       },
       {
         path: 'add-review/:id',
