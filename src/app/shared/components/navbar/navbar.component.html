@@ -1,1 +1,41 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="navbar-left">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/">
+        <p>PLOTLINE</p>
+      </a>
+    </div>
+
+    <!-- Botón de menú -->
+    <button class="menu-btn" (click)="toggleMenu()">&#9776; Menú</button>
+  </div>
+
+  <!-- Botón de iniciar sesión -->
+  <div class="auth-section">
+    <a href="/login">Iniciar sesión</a>
+  </div>
+
+  <!-- Menú desplegable -->
+  <div class="dropdown-menu" [ngClass]="{'show': menuOpen}">
+    <button class="close-btn" (click)="toggleMenu()">&#10005;</button>
+    <ul>
+      <li>
+        <img class="logo-nav" src="assets/svg/home.svg" alt="Home">
+        <a href="/"><b>Home</b></a>
+      </li>
+      <li>
+        <img class="logo-nav" src="assets/svg/film.svg" alt="Movies">
+        <a href="/movies"><b>Películas</b></a>
+      </li>
+      <li>
+        <img class="logo-nav" src="assets/svg/tv.svg" alt="Tv">
+        <a href="/tv"><b>Series</b></a>
+      </li>
+      <li>
+        <img class="logo-nav" src="assets/svg/star.svg" alt="Reviews">
+        <a href="/reviews"><b>Reseñas</b></a>
+      </li>
+    </ul>
+  </div>
+</nav>
