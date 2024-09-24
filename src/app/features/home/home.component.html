@@ -1,1 +1,34 @@
-<p>home works!</p>
+<div class="home-section">
+  <!-- Slider a la izquierda -->
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      @for (item of upcomingMovies; let i  = $index; track item){
+        <div class="slider-item" [ngClass]="{'active': i === currentSlide}">
+          <img [src]="getPosterUrl(item.poster_path)" alt="{{item.title}}">
+          <div class="slider-caption">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.overview }}</p>
+          </div>
+        </div>
+      }
+    </div>
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+  </div>
+  <!-- Listado a la derecha -->
+  <div class="list-container">
+    <h3>Próximamente</h3>
+    <ul>
+      @for(item of onTheAirTvShows; track item){
+        <li>
+          <div class="list-item">
+            <img [src]="getPosterUrl(item.poster_path)" alt="{{item.name}}">
+            <div class="list-details">
+              <h4>{{item.name}}</h4>
+            </div>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</div>
