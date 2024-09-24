@@ -13,12 +13,17 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getPopularMovies(): Observable<any> {
-    const url = `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`;
+    const url = `${this.apiUrl}/movie/popular?language=es-ES&region=ES&api_key=${this.apiKey}`;
+    return this.http.get<any>(url);
+  }
+
+  getUpcomingMovies(): Observable<any> {
+    const url = `${this.apiUrl}/movie/upcoming?language=es-ES&region=ES&api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 
   getTopRatedMovies(): Observable<any> {
-    const url = `${this.apiUrl}/movie/top_rated?api_key=${this.apiKey}`;
+    const url = `${this.apiUrl}/movie/top_rated?language=es-ES&region=ES&api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 

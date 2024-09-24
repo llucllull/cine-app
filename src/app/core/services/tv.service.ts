@@ -13,12 +13,17 @@ export class TvService {
   constructor(private http: HttpClient) { }
 
   getPopularTVShows(): Observable<any> {
-    const url = `${this.apiUrl}/tv/popular?api_key=${this.apiKey}`;
+    const url = `${this.apiUrl}/tv/popular?language=es-ES&region=ES&api_key=${this.apiKey}`;
+    return this.http.get<any>(url);
+  }
+
+  getOnTheAirTVShows(): Observable<any> {
+    const url = `${this.apiUrl}/tv/on_the_air?language=es-ES&region=ES&api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 
   getTopRatedTVShows(): Observable<any> {
-    const url = `${this.apiUrl}/tv/top_rated?api_key=${this.apiKey}`;
+    const url = `${this.apiUrl}/tv/top_rated?language=es-E&region=ESS&api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 
