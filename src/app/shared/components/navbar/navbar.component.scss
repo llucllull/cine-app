@@ -11,6 +11,7 @@
   .navbar-left {
     display: flex;
     align-items: center;
+    margin-left: 180px;
 
     .logo {
       width: auto;
@@ -48,6 +49,7 @@
   }
 
   .auth-section {
+    margin-right: 170px;
     a {
       color: white;
       text-decoration: none;
